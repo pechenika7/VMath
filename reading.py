@@ -11,4 +11,4 @@ def ReadFile(path):
         tri = str_.split()
         for i in range(3):
             tri[i] = int(tri[i])
-        res.append(tri)
+        res.append(tuple(tri))
