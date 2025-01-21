@@ -1,6 +1,6 @@
 from math import sqrt
 
-def solve_equ(equ):
+def SolveEqu(equ):
     D = equ[1]**2-4*equ[0]*equ[2]
     roots = list()
     if D > 0:
@@ -11,9 +11,9 @@ def solve_equ(equ):
         roots = (None, None)
     return roots
 
-def solve(list_params):
+def Solve(list_params):
     res = list()
     for i in list_params:
-        roots = solve_equ(i)
+        roots = SolveEqu(i)
         res.append(roots)
     return res

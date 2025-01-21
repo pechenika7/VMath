@@ -1,18 +1,18 @@
 import datetime
-from reading import read_file
-from counting import solve
-from thebiggest import bigger_root
+from reading import ReadFile
+from counting import Solve
+from thebiggest import BiggerRoot
 
 
 print(datetime.datetime.now().strftime('%d/%m/%Y')+ ' Starting')#вывод даты
 
 path ='data.inp'
-list_params = read_file(path)
+list_params = ReadFile(path)
 print(list_params)
 
-list_roots = solve(list_params)
+list_roots = Solve(list_params)
 print(list_roots)
 
-bigger_root()
+print(BiggerRoot(list_roots))
 
 print('Finish')

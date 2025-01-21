@@ -1,4 +1,4 @@
-def read_file(path):
+def ReadFile(path):
     print('enter', path)
 
     f = open(path, 'r')
