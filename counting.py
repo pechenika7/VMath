@@ -4,9 +4,17 @@ def SolveEqu(equ):
     D = equ[1]**2-4*equ[0]*equ[2]
     roots = list()
     if D > 0:
-        roots = (((-equ[1] + sqrt(D)) / (2 * equ[0])), ((-equ[1] - sqrt(D)) / (2 * equ[0])))
+        try:
+            roots = (((-equ[1] + sqrt(D)) / (2 * equ[0])), ((-equ[1] - sqrt(D)) / (2 * equ[0])))
+        except:
+            print('Problem with zero division: ', str(equ[0]))
+            roots = (None, None)
     elif D == 0:
-        roots = ((-equ[1] / 2 * equ[0]), (-equ[1] / 2 * equ[0]))
+        try:
+            roots = ((-equ[1] / 2 * equ[0]), (-equ[1] / 2 * equ[0]))
+        except:
+            print('Problem with zero division: ', str(equ[0]))
+            roots = (None, None)
     elif D < 0:
         roots = (None, None)
     return roots
