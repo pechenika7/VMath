@@ -37,7 +37,7 @@ def Solve(list_params):
     res = list()
     for i in list_params:
         g = s_dict.get(i)
-        if g == None:
+        if g is None:
             t = counting(i)
             roots = t.SolveEqu()
             s_dict[i] = roots

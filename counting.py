@@ -24,9 +24,9 @@ def Solve(list_params):
     res = list()
     for i in list_params:
         g = s_dict.get(i)
-        if g == None:
+        if g is None:
             roots = SolveEqu(i)
-            s_dict[i]=roots
+            s_dict[i] = roots
         else:
             roots = s_dict[i]
         res.append(roots)
