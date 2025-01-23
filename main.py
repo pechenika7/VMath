@@ -1,8 +1,10 @@
+from time import time
 import datetime
 from reading import ReadFile
-from counting import Solve
+from countingclass import Solve
 from thebiggest import BiggerRoot
 
+time1 = time()
 
 print(datetime.datetime.now().strftime('%d/%m/%Y')+ ' Starting')#вывод даты
 
@@ -15,4 +17,4 @@ print(list_roots)
 
 print(BiggerRoot(list_roots))
 
-print('Finish')
+print('Finish, ', time()-time1)
