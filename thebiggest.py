@@ -1,8 +1,11 @@
-def BiggerRoot(list_roots, f):
+def MyFunc(x):
+    return x
+
+def BiggerRoot(list_roots, f = max, g = MyFunc):
     res = list()
     for i in list_roots:
         try:
-            item = f(abs(i[0]), abs(i[1]))
+            item = f(g(i[0]), g(i[1]))
         except:
             item = None
         finally:
