@@ -7,6 +7,7 @@ def ReadFile(path):
         str_ = f.readline()
         if str_ == '' or str_ == '\n':
             print('exit')
+            f.close()
             return res
         tri = str_.split()
         for i in range(3):

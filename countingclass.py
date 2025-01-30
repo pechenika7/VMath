@@ -30,6 +30,26 @@ class counting():
             self.roots = (None, None)
         return self.roots
 
+class CountingGeron():
+
+    def __init__(self, list_):
+        self.a = list_[0]
+        self.b = list_[1]
+        self.c = list_[2]
+
+    @classmethod
+    def SemiPerimeter(cls, a, b, c):
+        return (a + b +c)/2
+
+    def CalcSqu(self):
+        p = CountingGeron.SemiPerimeter(self.a, self.b, self.c)
+        try:
+            self.squ = sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+        except:
+            print('Problem with negative root: ', str(self.a), str(self.b), str(self.c))
+            self.squ = None
+        return self.squ
+
 
 
 def Solve(list_params):
@@ -44,4 +64,18 @@ def Solve(list_params):
         else:
             roots = s_dict[i]
         res.append(roots)
+    return res
+
+def SolveGeron(list_params):
+    s_dict = dict()
+    res = list()
+    for i in list_params:
+        g = s_dict.get(i)
+        if g is None:
+            t = CountingGeron(i)
+            squ = t.CalcSqu()
+            s_dict[i] = squ
+        else:
+            squ = s_dict[i]
+        res.append(squ)
     return res
