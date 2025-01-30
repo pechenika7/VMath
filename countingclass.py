@@ -1,18 +1,22 @@
 from math import sqrt
 
-class counting():
-
+class First():
     def __init__(self, list_):
         self.a = list_[0]
         self.b = list_[1]
         self.c = list_[2]
+
+class Counting(First):
+
+    def __init__(self, list_):
+        super().__init__(list_)
 
     @classmethod
     def Discr(cls, a, b, c):
         return b ** 2 - 4 * a * c
 
     def SolveEqu(self):
-        D = counting.Discr(self.a, self.b, self.c)
+        D = Counting.Discr(self.a, self.b, self.c)
         self.roots = list()
         if D > 0:
             try:
@@ -30,12 +34,10 @@ class counting():
             self.roots = (None, None)
         return self.roots
 
-class CountingGeron():
+class CountingGeron(First):
 
     def __init__(self, list_):
-        self.a = list_[0]
-        self.b = list_[1]
-        self.c = list_[2]
+        super().__init__(list_)
 
     @classmethod
     def SemiPerimeter(cls, a, b, c):
@@ -58,7 +60,7 @@ def Solve(list_params):
     for i in list_params:
         g = s_dict.get(i)
         if g is None:
-            t = counting(i)
+            t = Counting(i)
             roots = t.SolveEqu()
             s_dict[i] = roots
         else:
